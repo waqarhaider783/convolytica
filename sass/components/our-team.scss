@@ -1,0 +1,86 @@
+@import "../partials/theme.scss";
+
+.member {
+  background: var(--whiteTextColor);
+  padding: 30px;
+  border-radius: 10px;
+  figure {
+    width: 100%;
+    height: 100%;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+  .details {
+    .name {
+      font-size: 30px;
+      color: var(--blackTextColor);
+      text-align: center;
+      font-weight: 700;
+      line-height: 40px;
+      margin-top: 20px;
+    }
+    .designation {
+      font-size: 20px;
+      text-align: center;
+      line-height: 20px;
+      color: var(--blackTextColor);
+    }
+  }
+  .trending-card {
+    .inner {
+      background-color: var(--whiteTextColor);
+      overflow: hidden;
+    }
+    .aspect-ratio {
+      width: 100%;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      padding: calc(100% / 16 * 14) 0 0;
+      background-color: var(--whiteTextColor);
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+        object-position: center center;
+        -webkit-mask-image: url(http://www.convolytica.com/wp-content/uploads/2021/12/team-mask.svg);
+        mask-image: url(http://www.convolytica.com/wp-content/uploads/2021/12/team-mask.svg);
+        -webkit-mask-position: top left;
+        mask-position: top left;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+      }
+    }
+  }
+  @media (max-width: 1500px) {
+    .details {
+      .name {
+        font-size: 26px;
+      }
+      .designation {
+        font-size: 17px;
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .details {
+      .name {
+        font-size: 20px;
+      }
+      .designation {
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: 551px) {
+    padding-bottom: 0;
+  }
+}

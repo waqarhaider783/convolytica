@@ -1,0 +1,14 @@
+@import "../partials/theme.scss";
+
+//Styling "import" using globaly in for pages.
+@import "../partials/import";
+
+// layout
+// @import "../components/gridLayout";
+
+//components using in page
+@import "../components/icons_html";
+
+main {
+  min-height: 100vh;
+}

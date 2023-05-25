@@ -1,0 +1,313 @@
+@import "../partials/theme";
+.features {
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    padding: 3px 0;
+    padding-right: 55px;
+    transition: 0.3s;
+    color: var(--greyTextColor);
+    position: relative;
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      display: block;
+      text-transform: capitalize;
+    }
+    .subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      padding-bottom: 20px;
+      display: block;
+    }
+    &::after {
+      content: "";
+      height: 3px;
+      width: 60%;
+      background: transparent;
+      border-radius: 30px;
+      position: absolute;
+    }
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    .title {
+      color: var(--blueColor);
+    }
+    .subtitle {
+      color: var(--blackTextColor);
+    }
+    &::after {
+      background: var(--blueColor);
+    }
+  }
+  .contents {
+    div:not(:first-child) {
+      display: none;
+    }
+  }
+  /* Style the tab content */
+  .tabcontent {
+    display: flex;
+    padding: 35px;
+    padding-bottom: 0;
+    border-radius: 30px;
+    background: #dae3f3;
+    margin: 0 -1.5%;
+    color: var(--blackTextColor);
+    justify-content: space-between;
+    .info {
+      width: 40%;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      .heading {
+        font-size: 20px;
+        line-height: 1.5em;
+        font-weight: 700;
+      }
+      .desc {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5em;
+        margin: 30px 0;
+        a {
+          text-decoration: underline;
+          text-transform: capitalize;
+        }
+      }
+      .btn {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 12px;
+        border-radius: 10px;
+        color: var(--blackTextColor);
+        border: 1px solid var(--blueColor);
+        min-width: 160px;
+        text-align: center;
+        cursor: pointer;
+        background: transparent;
+        transition: 300ms background-color ease-in, 200ms color ease-in;
+        width: max-content;
+        white-space: pre;
+        &:hover {
+          background: var(--blueColor);
+          color: var(--whiteTextColor);
+          transition: 300ms background-color ease-in, 200ms color ease-in;
+        }
+      }
+    }
+    figure {
+      width: 55%;
+      @include avoid-clicks;
+      .analytics {
+        max-width: 100%;
+        min-height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: bottom;
+      }
+      .analytics-phone {
+        object-fit: contain;
+        display: none;
+        max-width: 100%;
+        max-height: 100%;
+        object-position: bottom;
+      }
+    }
+  }
+  // second variant of features tabs
+  &.v2 {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--borderColor);
+    .tab {
+      display: flex;
+      flex-direction: column;
+      width: 26%;
+      border-right: 1px solid var(--borderColor);
+      justify-content: space-between;
+      padding: 50px 0 50px 50px;
+      .tablinks {
+        // &:not(:last-child) {
+        //   margin-bottom: 40px;
+        // }
+        &::after {
+          position: absolute;
+          right: 0;
+          height: 100%;
+          top: 0;
+          border-radius: 5px 0 0 5px;
+          width: 2px;
+        }
+      }
+    }
+    .contents {
+      width: 65%;
+      div:not(:first-child) {
+        display: none;
+      }
+      .tabcontent {
+        // display: none;
+        margin: 0;
+        background: transparent;
+        padding: 0 20px 0 0;
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        .info {
+          width: 100%;
+          margin-bottom: 45px;
+        }
+        figure {
+          width: fit-content;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  // Extra large devices (large desktops, 16000px and Down)
+  @media (max-width: 1640px) {
+    .tabcontent {
+      .info {
+        .desc {
+          font-size: 16px;
+          margin: 18px 0;
+        }
+      }
+    }
+  }
+
+  // large devices (desktops, 1440px and Down)
+  @media (max-width: 1440px) {
+    .tab {
+      @include flex-slider;
+      @include edges;
+    }
+    .tab button {
+      padding-right: 30px;
+      .title,
+      .subtitle {
+        white-space: pre;
+      }
+    }
+    .tabcontent {
+      .info {
+        .desc {
+          font-size: 14px;
+          margin: 14px 0;
+        }
+      }
+    }
+    &.v2 {
+      .tab {
+        flex-wrap: wrap;
+        overflow: hidden;
+        // width: 30%;
+        margin: 0;
+        padding: 30px 0 30px 30px;
+        .tablinks {
+          margin-bottom: 20px !important;
+          .title {
+            white-space: inherit;
+            font-size: 16px;
+          }
+        }
+      }
+      .contents {
+        .tabcontent {
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+
+  // Small Desktop devices (Small desktops, 1440px and Down)
+  @media (max-width: 1280px) {
+    .tabcontent {
+      flex-direction: column;
+      margin: 0 -5.5%;
+      padding: 30px;
+      padding-bottom: 0;
+      border-radius: 0;
+      .info {
+        width: 100%;
+      }
+      figure {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  // Large tablets (tablets and small desktops, 992px and up)
+  @media (max-width: 1199px) {
+    .tab {
+      margin-bottom: 0 10px;
+    }
+    .tab button {
+      .title {
+        font-size: 18px;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
+    }
+    .tabcontent {
+      .info {
+        .heading {
+          font-size: 18px;
+        }
+        .desc {
+          font-size: 14px;
+        }
+        .btn {
+          padding: 8px;
+          max-width: 170px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &.v2 {
+      .tabcontent {
+        figure {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 768px) {
+    .tabcontent {
+      padding: 30px;
+      figure {
+        .analytics {
+          display: none;
+        }
+        .analytics-phone {
+          width: 100%;
+          display: flex;
+        }
+      }
+    }
+  }
+
+  // Mobile devices (landscape phones, 576px and up)
+  @media (max-width: 767px) {
+  }
+}

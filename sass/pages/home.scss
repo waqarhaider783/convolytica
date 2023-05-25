@@ -1,0 +1,46 @@
+@import "../partials/theme.scss";
+
+//Styling "import" using globaly in for pages.
+@import "../partials/import";
+
+//overview section styling
+@import "../components/overview";
+//features
+@import "../components/features";
+//brands
+@import "../components/brands";
+//admins
+@import "../components/admins";
+//priority
+@import "../components/priority";
+
+@import "../components/solutions";
+@import "../components/catalyzing";
+@import "../components/our-team";
+@import "../components/brands";
+
+.teamSwiper {
+  .swiper-button-next,
+  .swiper-button-prev {
+    &::after {
+      font-size: 14px;
+      border-radius: 50%;
+      font-weight: 500;
+      border: 1px solid #222;
+      color: #222;
+      height: 27px !important;
+      width: 30px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.teamSwiper {
+  margin: 0 120px;
+}
+@media (max-width: 767px) {
+  .teamSwiper {
+    margin: 0 40px;
+  }
+}

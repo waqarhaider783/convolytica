@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+@import "theme";
+//===================
+// this is not in use but dont remove it.
+:root {
+  --gp: 15px;
+}
+// ======================
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $secound-theme-colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $social-colors {
+    --#{$color}: #{$value};
+  }
+  --spacing5: 5px;
+  --spacing10: 10px;
+  --spacing: 15px;
+  --gap: 15px;
+
+  @media (max-width: 768px) {
+    --gap: 10px;
+  }
+}
+
+//Styling using globaly in projects.
+
+//Settings Have Custom Variables, Icons Variable and mixins.
+@import "settings";
+// HTML reset CSS.
+@import "reset";
+// Default Styling.
+@import "global";
+// Custom Grid Functions.
+@import "grid";
+
+// Partials Ends
+
+// Projects Icon CSS
+@import "../icons/style";
+
+// Header CSS
+@import "../components/header";
+// @import "../components/header_serach_component";
+// @import "../components/header_responsive_menu";
+
+// Footer CSS
+@import "../components/footer";
+
+//css For Popups.

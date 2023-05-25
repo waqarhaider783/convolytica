@@ -1,0 +1,140 @@
+@import "./partials/theme.scss";
+
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $secound-theme-colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $social-colors {
+    --#{$color}: #{$value};
+  }
+
+  --spacing5: 5px;
+  --spacing10: 10px;
+  --spacing: 15px;
+  --gap: 15px;
+
+  @media (max-width: 768px) {
+    --gp: 10px;
+  }
+}
+
+//Styling "import" using globaly in for pages.
+
+@import "partials/import";
+
+// impliment css for icon page only
+@import "partials/_iconhtml";
+// IF Slick Slider is use
+// @import "slick/slick";
+// @import "slick/slick-theme";
+
+//global layout
+// @import "components/two_column_layout";
+// @import "components/column_short";
+
+//component css import here..
+
+// .scroll {
+//   overflow-x: auto;
+//   overflow-y: hidden;
+// }
+
+// .global_table {
+//   margin-top: 25px;
+
+//   table {
+//     width: 100%;
+
+//     thead,
+//     tbody {
+//       width: 100%;
+//     }
+//     th,
+//     td {
+//       font-size: 15px;
+//       line-height: 25px;
+//       box-sizing: border-box;
+//       text-align: left;
+//       color: color(textDark);
+//       padding: 25px 25px;
+
+//       &:first-child {
+//         padding-left: 0;
+//       }
+//       &:last-child {
+//         padding-right: 0;
+//       }
+//     }
+//   }
+// }
+
+//  <div class="container">
+//         <section class="agent-listing scroll">
+//             <table class="agent-listing__table">
+//                 <thead>
+//                     <tr class="agent-listing__table__head">
+//                     <tr _ngcontent-dvd-c44="">
+//                         <th>User Name</th>
+//                         <th>Type</th>
+//                         <th>Team</th>
+//                         <th>Ext</th>
+//                         <th>Login Time</th>
+//                         <th>Last Logout</th>
+//                         <th>Status</th>
+//                         <th>Interaction</th>
+//                         <th>Voice</th>
+//                         <th>Email</th>
+//                         <th>Chat</th>
+//                         <th>Video</th>
+//                     </tr>
+//                     </tr>
+//                 </thead>
+//                 <tbody>
+//                     <tr class="odd">
+//                         <td class="sorting_1">Abbas Rizvi</td>
+//                         <td>1</td>
+//                         <td>1</td>
+//                         <td>6501</td>
+//                         <td>2021-10-22T12:43:50.2441836</td>
+//                         <td>2021-10-22T12:43:50.2441836</td>
+//                         <td>On Call</td>
+//                         <td>60</td>
+//                         <td>9</td>
+//                         <td>5</td>
+//                         <td>10</td>
+//                         <td>9</td>
+//                     </tr>
+//                     <tr class="even">
+//                         <td class="sorting_1">Abbas Rizvi</td>
+//                         <td>1</td>
+//                         <td>1</td>
+//                         <td>6501</td>
+//                         <td>2021-10-22T12:43:50.2441836</td>
+//                         <td>2021-10-22T12:43:50.2441836</td>
+//                         <td>On Call</td>
+//                         <td>60</td>
+//                         <td>9</td>
+//                         <td>5</td>
+//                         <td>10</td>
+//                         <td>9</td>
+//                     </tr>
+//                     <tr class="odd">
+//                         <td class="sorting_1">Abbas Rizvi</td>
+//                         <td>1</td>
+//                         <td>1</td>
+//                         <td>6501</td>
+//                         <td>2021-10-22T12:43:50.2441836</td>
+//                         <td>2021-10-22T12:43:50.2441836</td>
+//                         <td>On Call</td>
+//                         <td>60</td>
+//                         <td>9</td>
+//                         <td>5</td>
+//                         <td>10</td>
+//                         <td>9</td>
+//                     </tr>
+//                 </tbody>
+//             </table>
+//         </section>
+//     </div>

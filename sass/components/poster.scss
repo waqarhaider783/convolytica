@@ -1,0 +1,45 @@
+@import "../partials/theme";
+.poster {
+  background-image: linear-gradient(
+    to left,
+    var(--primaryColor),
+    var(--secondaryColor)
+  );
+  padding: 105px 0;
+  text-align: center;
+  .title {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: var(--whiteTextColor);
+    font-weight: 700;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  .desc {
+    font-size: 22px;
+    color: var(--whiteTextColor);
+    line-height: 1.5em;
+    margin: auto;
+    width: 80%;
+  }
+}
+@media (max-width: 1280px) {
+  .poster {
+    padding: 70px 0;
+    .desc {
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .poster {
+    padding: 40px 0;
+    .title {
+      font-size: 22px;
+    }
+    .desc {
+      font-size: 18px;
+    }
+  }
+}

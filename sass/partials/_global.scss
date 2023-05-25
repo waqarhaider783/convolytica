@@ -1,0 +1,494 @@
+/**
+ 
+ * @author Ashish Ali <aashish.karowalia@va8ivedigital.com>
+ */
+
+body {
+  background-color: body(background-color);
+  color: body(color);
+  font-family: $font-family;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+a {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--blackTextColor);
+}
+
+sub {
+  vertical-align: top;
+  font-size: smaller;
+}
+
+p a,
+p strong {
+  display: inline-block;
+  vertical-align: top;
+}
+
+p:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+input,
+select,
+textarea,
+button {
+  vertical-align: top;
+  outline: none;
+  color: var(--blackTextColor);
+  font-size: 14px;
+
+  @include placeholder {
+    color: #c5c5c5;
+  }
+}
+
+input,
+select,
+textarea,
+button {
+  @include font();
+}
+.main {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  @include transition(all 0.4s linear);
+}
+
+// Container
+.wrapper,
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 1640px;
+  margin: 0 auto;
+  &.min {
+    max-width: 1310px;
+  }
+  &.abs {
+    position: absolute;
+  }
+}
+
+// Max Container
+.wrapper-fluid,
+.container-fluid {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+//grid
+[class*="grid"] {
+  display: grid;
+}
+
+// Flex
+[class*="flex"] {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//Align perfect Center
+[class*="Vhc"] {
+  @include flex-center;
+}
+
+// Flex Direction Column
+[class*="Dc"] {
+  flex-direction: column;
+}
+
+// Flex row reverse
+[class*="Rv"] {
+  flex-direction: row-reverse;
+}
+
+//accordian
+[class^="box-"] {
+  display: none;
+
+  &.showfirst {
+    display: block;
+  }
+}
+
+.rowbar5 {
+  margin: 0 calc(-1 * var(--spacing5));
+}
+.rowbar10 {
+  margin: 0 calc(-1 * var(--spacing10));
+}
+.rowbar {
+  margin: 0 calc(-1 * var(--spacing));
+}
+
+.offset5 {
+  margin: calc(-1 * var(--spacing5));
+}
+.offset10 {
+  margin: calc(-1 * var(--spacing10));
+}
+.offset {
+  margin: calc(-1 * var(--spacing));
+}
+
+.section {
+  &:not(.no-padding) {
+    padding-top: var(--gap);
+    padding-bottom: var(--gap);
+  }
+  &.padding-bottom-none {
+    padding-bottom: 0;
+  }
+  &.padding-top-none {
+    padding-top: 0;
+  }
+}
+
+/* ================================================================
+      Global Class which are extended in projects 
+=================================================================== */
+
+.mobilevisible {
+  display: none;
+  @media (max-width: 980px) {
+    display: block;
+  }
+}
+
+//global heading style styling
+.top-heading {
+  color: var(--blackTextColor);
+  font-weight: 700;
+  line-height: 1.5em;
+  text-align: left;
+  font-size: 50px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  &.compr {
+    letter-spacing: -4px;
+  }
+  &.sub {
+    margin-bottom: 10px;
+  }
+  &.white {
+    color: var(--whiteTextColor);
+  }
+  &.center {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  &.small {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 1440px) {
+    font-size: 35px;
+  }
+  @media (max-width: 768px) {
+    font-size: 22px;
+    margin: auto;
+    margin-bottom: 10px;
+    &.center {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.sub-heading {
+  color: var(--darkBlack);
+  text-align: left;
+  font-size: 28px;
+  line-height: 1.5em;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 40px !important;
+  width: 80%;
+  &.center {
+    text-align: center;
+    margin: auto;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    &.center {
+      margin-bottom: 15px !important;
+    }
+  }
+}
+.sec-heading {
+  font-size: 30px;
+  line-height: 1.6em;
+  color: var(--blackTextColor);
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 30px 0;
+  &.center {
+    text-align: center;
+  }
+  &.mtn {
+    margin-top: 0;
+  }
+}
+//global heading wrapper with two elements eg: heading and link style styling
+.heading-wrapper {
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+  .top-heading {
+    flex: 1;
+    margin-bottom: 0px;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+}
+
+//view all button global styling
+.view-all-global {
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  color: var(--darkBlack);
+
+  i {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+
+  &:hover {
+    color: var(--primaryColor);
+
+    i {
+      color: var(--primaryColor);
+    }
+  }
+}
+.dont-select {
+  pointer-events: none;
+}
+.primary-btn {
+  border-radius: 40px;
+  background: var(--blueColor);
+  padding: 25px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--whiteTextColor);
+  text-transform: capitalize;
+  width: max-content;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  min-width: 285px;
+  white-space: pre;
+  &.center {
+    margin: auto;
+    margin-top: 50px;
+  }
+  i {
+    padding: 11px 15px;
+    background: var(--whiteTextColor);
+    border-radius: 40px;
+    margin-right: 10px;
+    color: var(--blueColor);
+  }
+  @media (max-width: 768px) {
+    &.center {
+      margin-top: 20px;
+    }
+  }
+}
+.secondary-btn {
+  border-radius: 50px;
+  background: var(--btnBlue);
+  padding: 15px 0;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--whiteTextColor);
+  text-transform: capitalize;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  min-width: 260px;
+  white-space: pre;
+  height: fit-content;
+  &.center {
+    margin: auto;
+    margin-top: 50px;
+  }
+}
+.tertiary-btn {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--blackTextColor);
+  border: 1px solid var(--blueColor);
+  min-width: 160px;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+  transition: 300ms background-color ease-in, 200ms color ease-in;
+  width: max-content;
+  white-space: pre;
+
+  &.blue {
+    background: var(--blueColor);
+    color: var(--whiteTextColor);
+
+    &:hover {
+      color: var(--blueColor);
+      background: var(--whiteTextColor);
+    }
+  }
+
+  &:hover {
+    background: var(--blueColor);
+    color: var(--whiteTextColor);
+    transition: 300ms background-color ease-in, 200ms color ease-in;
+  }
+  &.center {
+    margin: auto;
+    margin-top: 50px;
+  }
+}
+.richtext {
+  color: var(--blackTextColor);
+  max-width: 1244px;
+  margin: auto;
+  p {
+    font-size: 18px;
+    line-height: 1.5em;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.5em;
+  }
+  h3 {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5em;
+    width: fit-content;
+  }
+}
+.bg-gray {
+  background: var(--lightGreyColor);
+}
+.border-btm {
+  content: "";
+  height: 1px;
+  background: var(--borderColor);
+  margin: 60px auto 0 auto;
+  max-width: 1640px;
+}
+.wpcf7-text {
+  width: 90%;
+}
+.wpcf7-number {
+  width: 90%;
+}
+.mb-30 {
+  margin-bottom: 30px !important;
+  @media (max-width: 550px) {
+    margin-bottom: 10px !important;
+  }
+}
+//don't dare to remove this
+.right-50 {
+  @media (max-width: 1250px) {
+    margin-right: -50%;
+  }
+}
+@media (max-width: 1199px) {
+  .primary-btn {
+    font-size: 14px;
+    min-width: 200px;
+    padding: 16px;
+    i {
+      padding: 8px 12px;
+    }
+  }
+  .richtext {
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .tertiary-btn {
+    padding: 8px;
+    max-width: 170px;
+    font-weight: 500;
+  }
+  .sec-heading {
+    font-size: 24px;
+    margin: 25px 0;
+  }
+}
+@media (max-width: 768px) {
+  .primary-btn {
+    font-size: 12px;
+    min-width: 160px;
+    padding: 14px;
+    i {
+      padding: 6px 8px;
+    }
+  }
+  .secondary-btn {
+    font-size: 10px;
+    padding: 13px;
+    min-width: 160px;
+    &.center {
+      margin-top: 20px;
+    }
+  }
+  .richtext {
+    h2 {
+      font-size: 20px;
+    }
+  }
+  .border-btm {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  .richtext {
+    p {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+  .sec-heading {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .border-btm {
+    margin-top: 20px;
+  }
+}

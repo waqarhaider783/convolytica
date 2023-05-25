@@ -1,0 +1,27 @@
+@import "../partials/theme";
+.overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--blackTextColor);
+  margin-bottom: 40px;
+  .info {
+    width: 40%;
+    .desc {
+      font-size: 14px;
+      line-height: 1.6em;
+    }
+  }
+  .video {
+    width: 54%;
+    background: var(--primaryColor);
+    opacity: 0.8;
+    border-radius: 20px;
+    img {
+      z-index: 10;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+}

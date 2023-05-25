@@ -1,0 +1,82 @@
+//using these variables only for builten function of scss eg: lighten,darken,rgba in colors,
+$primaryColor: #382263;
+$primaryContrastColor: #7574fb;
+$secondaryColor: #00194d;
+$tertiaryColor: #dd7a2f; //not defined
+
+/* color For background */
+$blueColor: #0048e0;
+$btnBlue: #2b4edd;
+$lightGreyColor: #f0f0f0;
+$greyColor: #f4f4f4; //not defined
+
+/* For Text Color */
+$darkBlack: #303030; //not defined
+$greyTextColor: #515151;
+$primaryTextColor: #000000; //not defined
+
+/* use for both background and text */
+$whiteTextColor: #ffffff;
+$blackTextColor: #000000;
+$boxShadow: #e7e7e7;
+
+/* For borders */
+$borderColor: #c8c8c8;
+
+// default colors starts never change//
+$success: #28a745 !default;
+$info: #17a2b8 !default;
+$warning: #ffc107 !default;
+$danger: #dc3545 !default;
+
+// default colors Ends never change//
+$secound-theme-colors: () !default;
+$secound-theme-colors: map-merge(
+  (
+    "primaryColor": $primaryColor,
+    "primaryContrastColor": $primaryContrastColor,
+    "secondaryColor": $secondaryColor,
+    "tertiaryColor": $tertiaryColor,
+    "darkBlack": $darkBlack,
+    "greyColor": $greyColor,
+    "lightGreyColor": $lightGreyColor,
+    "blueColor": $blueColor,
+    "greyTextColor": $greyTextColor,
+    "primaryTextColor": $primaryTextColor,
+    "whiteTextColor": $whiteTextColor,
+    "blackTextColor": $blackTextColor,
+    "borderColor": $borderColor,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "boxShadow": $boxShadow,
+    "btnBlue": $btnBlue,
+  ),
+  $secound-theme-colors
+);
+
+/* ========================
+   Social Media Theme Color
+   ======================== */
+$facebook: #3b5998;
+$twitter: #1da1f2;
+$instagram: #dd2a7b;
+$linkedin: #0274b3;
+$google-plus: #dd4d40;
+$pinterest: #e56262;
+$youtube: #d8362a;
+
+$social-colors: () !default;
+$social-colors: map-merge(
+  (
+    "facebook": $facebook,
+    "twitter": $twitter,
+    "instagram": $instagram,
+    "linkedin": $linkedin,
+    "google-plus": $google-plus,
+    "pinterest": $pinterest,
+    "youtube": $youtube,
+  ),
+  $social-colors
+);
